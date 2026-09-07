@@ -5,7 +5,6 @@
   --color-wine: #17324d;
   --color-violet: #2387b5;
   --color-lilac: #d7effc;
-  --color-gold: #e8b44f;
   --color-lagoon: #102a43;
   --color-cloud: #f4fbff;
   --color-sky: #b9e4fa;
@@ -33,7 +32,6 @@
   .glass-card { @apply rounded-card border border-white/35 bg-white/75 p-4 text-ink backdrop-blur-xl; }
   .glass-panel { @apply rounded-card border border-white/70 bg-white/75 backdrop-blur-2xl; box-shadow: inset 0 1px 0 rgb(255 255 255 / .75), inset 0 0 0 1px rgb(255 255 255 / .12); }
   .glass-dark { @apply rounded-card border border-white/20 bg-white/10 backdrop-blur-2xl; box-shadow: inset 0 1px 0 rgb(255 255 255 / .22); }
-  .glass-hero { @apply rounded-[1.5rem] border border-white/70 bg-white/55 p-6 backdrop-blur-xl sm:p-10; box-shadow: inset 0 1px 0 rgb(255 255 255 / .85), inset 0 0 0 1px rgb(255 255 255 / .28); }
   .section-glass { @apply rounded-[2rem] border border-white/65 bg-white/35 p-5 text-center backdrop-blur-xl sm:p-8 lg:p-10; box-shadow: inset 0 1px 0 rgb(255 255 255 / .72), inset 0 0 0 1px rgb(255 255 255 / .12); }
   .screen-section { min-height: calc(100svh - 4.5rem); display: flex; align-items: center; }
   .display { @apply font-semibold leading-[.96] tracking-[-.032em]; }
@@ -42,7 +40,7 @@
   .timer-art { width: 5.25rem; height: 5.25rem; object-fit: contain; filter: drop-shadow(0 10px 14px rgb(23 50 77 / .16)); transition: transform .3s ease; }
   .founding-timer:hover .timer-art, .founding-timer:focus-visible .timer-art { transform: scale(1.08) rotate(-2deg); }
   .timer-art.is-shaking { animation: timer-shake .7s ease-in-out; }
-  .founding-count-wrap { @apply min-w-28 text-left; }
+  .founding-count-wrap { @apply min-w-28 rounded-2xl border border-white/70 bg-white/75 px-3 py-2 text-left shadow-lg backdrop-blur-xl; }
   .founding-label { @apply block text-[11px] font-bold uppercase tracking-[.07em] text-violet; }
   .founding-count { @apply mt-0.5 block text-base font-semibold leading-tight tracking-tight; }
   .founding-hint { @apply mt-1 block text-[11px] font-medium text-stone; }
@@ -67,7 +65,10 @@
 
 @layer utilities {
   .hero-grid { background: radial-gradient(ellipse at 18% 18%, rgb(255 255 255 / .82) 0 9%, transparent 25%), radial-gradient(ellipse at 84% 22%, rgb(255 255 255 / .56) 0 10%, transparent 28%), radial-gradient(circle at 78% 78%, rgb(232 180 79 / .22), transparent 24%), linear-gradient(135deg, #dff4ff 0%, #b9e4fa 48%, #8ecae9 100%); }
-  .atmosphere { background: radial-gradient(ellipse at 18% 22%, rgb(255 255 255 / .78) 0 10%, transparent 27%), radial-gradient(circle at 72% 40%, rgb(35 135 181 / .18), transparent 28%), radial-gradient(circle at 95% 52%, rgb(232 180 79 / .2), transparent 25%), #d7effc; }
+  .pastel-pathway { background: radial-gradient(circle at 14% 18%, rgb(255 255 255 / .72), transparent 27%), radial-gradient(circle at 86% 82%, rgb(255 214 190 / .78), transparent 32%), linear-gradient(135deg, #fff0e8 0%, #ffe8d6 48%, #ffe1c9 100%); }
+  .pastel-stories { background: radial-gradient(circle at 84% 14%, rgb(255 255 255 / .78), transparent 26%), radial-gradient(circle at 15% 84%, rgb(249 205 224 / .68), transparent 31%), linear-gradient(135deg, #f4edff 0%, #eee5ff 52%, #f9e6ef 100%); }
+  .pastel-nexus { background: radial-gradient(circle at 12% 22%, rgb(255 255 255 / .74), transparent 28%), radial-gradient(circle at 87% 78%, rgb(217 240 225 / .76), transparent 34%), linear-gradient(135deg, #e9f8ef 0%, #e3f3ed 48%, #e8e4fb 100%); }
+  .pastel-next { background: radial-gradient(circle at 84% 18%, rgb(255 255 255 / .8), transparent 26%), radial-gradient(circle at 16% 82%, rgb(255 220 204 / .78), transparent 31%), linear-gradient(135deg, #fff0ed 0%, #ffe8df 48%, #edf8ef 100%); }
   .reveal { opacity: 0; transform: translateY(24px); }
   .reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .7s ease, transform .7s ease; }
 }

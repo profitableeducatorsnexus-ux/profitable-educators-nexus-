@@ -112,7 +112,78 @@ const faqs = [
 
   updateCountdown();
   window.setInterval(updateCountdown, 60000);
-  timerButton?.addEventListener('click', () => dialog?.showModal());
+  const floatingTimer = document.querySelector<HTMLElement>('.founding-float');
+  let draggingTimer = false;
+  let timerMoved = false;
+  let timerPointerId = -1;
+  let timerStartX = 0;
+  let timerStartY = 0;
+  let timerOffsetX = 0;
+  let timerOffsetY = 0;
+  let skipTimerClick = false;
+
+  const moveTimer = (clientX: number, clientY: number) => {
+    if (!floatingTimer) return;
+    const rect = floatingTimer.getBoundingClientRect();
+    const margin = 8;
+    const maxLeft = Math.max(margin, window.innerWidth - rect.width - margin);
+    const maxTop = Math.max(margin, window.innerHeight - rect.height - margin);
+    const left = Math.min(Math.max(margin, clientX - timerOffsetX), maxLeft);
+    const top = Math.min(Math.max(margin, clientY - timerOffsetY), maxTop);
+    floatingTimer.style.left = `${left}px`;
+    floatingTimer.style.top = `${top}px`;
+    floatingTimer.style.right = 'auto';
+    floatingTimer.style.bottom = 'auto';
+  };
+
+  timerButton?.addEventListener('pointerdown', (event) => {
+    if (event.button !== 0 || !floatingTimer) return;
+    const rect = floatingTimer.getBoundingClientRect();
+    draggingTimer = true;
+    timerMoved = false;
+    timerPointerId = event.pointerId;
+    timerStartX = event.clientX;
+    timerStartY = event.clientY;
+    timerOffsetX = event.clientX - rect.left;
+    timerOffsetY = event.clientY - rect.top;
+    floatingTimer.style.left = `${rect.left}px`;
+    floatingTimer.style.top = `${rect.top}px`;
+    floatingTimer.style.right = 'auto';
+    floatingTimer.style.bottom = 'auto';
+    timerButton.classList.add('is-dragging');
+    timerButton.setPointerCapture(event.pointerId);
+    event.preventDefault();
+  });
+
+  timerButton?.addEventListener('pointermove', (event) => {
+    if (!draggingTimer || event.pointerId !== timerPointerId) return;
+    if (Math.hypot(event.clientX - timerStartX, event.clientY - timerStartY) > 4) timerMoved = true;
+    if (timerMoved) moveTimer(event.clientX, event.clientY);
+  });
+
+  const finishTimerDrag = (event: PointerEvent) => {
+    if (!draggingTimer || event.pointerId !== timerPointerId) return;
+    draggingTimer = false;
+    timerButton?.classList.remove('is-dragging');
+    if (timerButton?.hasPointerCapture(event.pointerId)) timerButton.releasePointerCapture(event.pointerId);
+    if (timerMoved) {
+      skipTimerClick = true;
+      window.setTimeout(() => { skipTimerClick = false; }, 100);
+    }
+    timerPointerId = -1;
+  };
+
+  timerButton?.addEventListener('pointerup', finishTimerDrag);
+  timerButton?.addEventListener('pointercancel', finishTimerDrag);
+  window.addEventListener('resize', () => {
+    if (!floatingTimer || !floatingTimer.style.left) return;
+    const rect = floatingTimer.getBoundingClientRect();
+    moveTimer(Math.min(rect.left + timerOffsetX, window.innerWidth - 8), Math.min(rect.top + timerOffsetY, window.innerHeight - 8));
+  });
+
+  timerButton?.addEventListener('click', () => {
+    if (!skipTimerClick) dialog?.showModal();
+  });
   closeDialog?.addEventListener('click', () => dialog?.close());
   dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 

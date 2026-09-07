@@ -1,0 +1,7 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Transformation icon</title>
+  <desc id="desc">A connected star and orbit representing visible transformation.</desc>
+  <path d="M40 17L44.8 31.2L60 32L48 41L52 56L40 47.5L28 56L32 41L20 32L35.2 31.2L40 17Z" fill="#E8B44F"/>
+  <path d="M17 51C25 63 45 66 59 55C65 50 66 43 62 38" stroke="#2387B5" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="62" cy="38" r="4" fill="#17324D"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Foundation icon</title>
+  <desc id="desc">Three grounded lines representing a strong starting point.</desc>
+  <path d="M20 50.5H60" stroke="#17324D" stroke-width="5" stroke-linecap="round"/>
+  <path d="M26 39.5H54" stroke="#2387B5" stroke-width="5" stroke-linecap="round"/>
+  <path d="M33 28.5H47" stroke="#E8B44F" stroke-width="5" stroke-linecap="round"/>
+</svg>

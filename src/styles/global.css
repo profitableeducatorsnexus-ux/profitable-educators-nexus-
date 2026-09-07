@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-wine: #17324d;
+  --color-violet: #2387b5;
+  --color-lilac: #d7effc;
+  --color-gold: #e8b44f;
+  --color-lagoon: #102a43;
+  --color-cloud: #f4fbff;
+  --color-sky: #b9e4fa;
+  --color-parchment: #eaf7ff;
+  --color-mist: #cfe7f2;
+  --color-ink: #17212b;
+  --color-stone: #66727c;
+  --font-sans: Fredoka, ui-sans-serif, system-ui, sans-serif;
+  --radius-card: 1rem;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-parchment font-sans text-ink antialiased; }
+  ::selection { @apply bg-lilac text-ink; }
+}
+
+@layer components {
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[.08em] text-violet; }
+  .btn { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-transparent px-5 py-3 text-sm font-semibold tracking-[-.01em] transition duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet; }
+  .btn-wine { @apply bg-wine text-white; }
+  .btn-lilac { @apply rounded-lg border-ink bg-lilac text-ink; }
+  .btn-outline { @apply rounded-lg border-white/70 text-white; }
+  .btn-outline-dark { @apply rounded-lg border-ink/30 text-ink; }
+  .glass-card { @apply rounded-card border border-white/35 bg-white/75 p-4 text-ink backdrop-blur-xl; }
+  .glass-panel { @apply rounded-card border border-white/70 bg-white/75 backdrop-blur-2xl; box-shadow: inset 0 1px 0 rgb(255 255 255 / .75), inset 0 0 0 1px rgb(255 255 255 / .12); }
+  .glass-dark { @apply rounded-card border border-white/20 bg-white/10 backdrop-blur-2xl; box-shadow: inset 0 1px 0 rgb(255 255 255 / .22); }
+  .glass-hero { @apply rounded-[1.5rem] border border-white/70 bg-white/55 p-6 backdrop-blur-xl sm:p-10; box-shadow: inset 0 1px 0 rgb(255 255 255 / .85), inset 0 0 0 1px rgb(255 255 255 / .28); }
+  .section-glass { @apply rounded-[2rem] border border-white/65 bg-white/35 p-6 backdrop-blur-xl sm:p-10 lg:p-14; box-shadow: inset 0 1px 0 rgb(255 255 255 / .72), inset 0 0 0 1px rgb(255 255 255 / .12); }
+  .screen-section { min-height: calc(100svh - 4.5rem); display: flex; align-items: center; }
+  .display { @apply font-semibold leading-[.96] tracking-[-.032em]; }
+  .founding-float { position: fixed; right: 1rem; bottom: 1rem; z-index: 40; width: min(18rem, calc(100vw - 2rem)); overflow: visible; }
+  .founding-timer { @apply relative flex w-full cursor-pointer items-center gap-3 overflow-visible rounded-[2.5rem] border border-white/80 p-3 text-left text-ink transition duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet; background: linear-gradient(145deg, rgb(255 255 255 / .94), rgb(185 228 250 / .96)); box-shadow: 0 14px 34px rgb(23 50 77 / .16), inset 0 1px 0 rgb(255 255 255 / .95), inset 0 0 0 1px rgb(255 255 255 / .25); }
+  .founding-timer::before, .founding-timer::after { content: ""; position: absolute; z-index: 0; border: 1px solid rgb(255 255 255 / .7); border-radius: 999px; background: rgb(255 255 255 / .28); }
+  .founding-timer::before { width: 4.8rem; height: 4.8rem; left: 1rem; top: -1.45rem; box-shadow: 2.7rem -.35rem 0 -.7rem rgb(255 255 255 / .5); }
+  .founding-timer::after { width: 5.8rem; height: 5.8rem; right: 1.5rem; bottom: -2rem; box-shadow: -2.6rem .4rem 0 -1rem rgb(255 255 255 / .42); }
+  .founding-dot { @apply relative z-10 flex size-9 shrink-0 items-center justify-center rounded-full bg-violet text-sm text-white; }
+  .founding-label { @apply block text-[11px] font-bold uppercase tracking-[.07em] text-violet; }
+  .founding-count { @apply relative z-10 mt-0.5 block text-base font-semibold tracking-tight; }
+  .founding-hint { @apply relative z-10 ml-auto text-[11px] font-medium text-stone; }
+  .founding-dialog { @apply fixed left-1/2 top-1/2 m-0 -translate-x-1/2 -translate-y-1/2 rounded-[1.5rem] border border-white/70 bg-cloud p-0 text-ink shadow-2xl; width: min(92vw, 30rem); }
+  .founding-dialog::backdrop { background: rgb(16 42 67 / .32); backdrop-filter: blur(5px); }
+  .founding-dialog-content { @apply relative p-6 sm:p-8; }
+  .founding-dialog-logo { @apply absolute left-5 top-5 size-14 rounded-2xl object-contain; }
+  .founding-dialog-close { @apply absolute right-4 top-4 flex size-8 items-center justify-center rounded-full border border-mist text-lg text-stone transition hover:bg-lilac focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet; }
+  .shooting-star { position: absolute; z-index: 5; left: 45%; top: 38%; color: #fff; font-size: 1.1rem; line-height: 1; opacity: 0; pointer-events: none; text-shadow: 0 0 8px rgb(255 255 255 / .95), 0 0 14px rgb(232 180 79 / .85); animation: shoot-star 1.2s cubic-bezier(.18,.72,.25,1) forwards; }
+
+  @keyframes shoot-star {
+    0% { opacity: 0; transform: translate(0, 0) scale(.35) rotate(0deg); }
+    12% { opacity: 1; }
+    100% { opacity: 0; transform: translate(var(--star-x), var(--star-y)) scale(1.15) rotate(-18deg); }
+  }
+}
+
+@layer utilities {
+  .hero-grid { background: radial-gradient(ellipse at 18% 18%, rgb(255 255 255 / .82) 0 9%, transparent 25%), radial-gradient(ellipse at 84% 22%, rgb(255 255 255 / .56) 0 10%, transparent 28%), radial-gradient(circle at 78% 78%, rgb(232 180 79 / .22), transparent 24%), linear-gradient(135deg, #dff4ff 0%, #b9e4fa 48%, #8ecae9 100%); }
+  .atmosphere { background: radial-gradient(ellipse at 18% 22%, rgb(255 255 255 / .78) 0 10%, transparent 27%), radial-gradient(circle at 72% 40%, rgb(35 135 181 / .18), transparent 28%), radial-gradient(circle at 95% 52%, rgb(232 180 79 / .2), transparent 25%), #d7effc; }
+  .reveal { opacity: 0; transform: translateY(24px); }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .7s ease, transform .7s ease; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .shooting-star { display: none; }
+}
+
+@media (max-width: 560px) {
+  .founding-float { right: .75rem; bottom: .75rem; }
+  .founding-hint { display: none; }
+}

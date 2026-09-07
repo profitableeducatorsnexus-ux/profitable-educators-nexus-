@@ -1,0 +1,9 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Momentum icon</title>
+  <desc id="desc">An ascending path with three points representing progress.</desc>
+  <path d="M20 56L34 43L44 49L60 29" stroke="#6BA9C2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity=".76"/>
+  <path d="M51 29H60V38" stroke="#A3D8EC" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20" cy="56" r="3" fill="#F0D99F"/>
+  <circle cx="34" cy="43" r="3" fill="#A3D8EC"/>
+  <circle cx="44" cy="49" r="3" fill="#A3D8EC"/>
+</svg>

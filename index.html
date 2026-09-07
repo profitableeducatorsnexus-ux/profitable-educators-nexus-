@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profitable Educators Nexus — A+ Educators | Educators who make tech work for them</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo: #1B3A2F;
+    --indigo-deep: #12271F;
+    --marigold: #FFCC00;
+    --coral: #D96B2B;
+    --ivory: #FBF6EE;
+    --ivory-dim: #EDE7D4;
+    --ink: #23291F;
+    --line: rgba(251, 246, 238, 0.14);
+    --line-dark: rgba(27, 59, 47, 0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--ink);
+    background: var(--ivory);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img, svg { display: block; max-width: 100%; }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(27, 31, 59, 0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--ivory);
+  }
+  .brand img { width: 34px; height: 34px; border-radius: 8px; }
+  .brand span { color: var(--marigold); }
+  .nav-cta {
+    background: var(--marigold);
+    color: var(--indigo-deep);
+    padding: 9px 20px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .nav-ctas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-cta-primary {
+    background: var(--coral);
+    color: var(--ivory);
+    padding: 9px 20px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background: var(--indigo);
+    color: var(--ivory);
+    padding: 96px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242,169,59,0.20) 0%, rgba(242,169,59,0) 70%);
+  }
+  .hero-inner {
+    max-width: 700px;
+    position: relative;
+    z-index: 1;
+  }
+  .eyebrow {
+    font-size: 15px;
+    color: var(--marigold);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5.4vw, 58px);
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--marigold);
+  }
+  .hero p.lede {
+    font-size: 19px;
+    color: var(--ivory-dim);
+    max-width: 540px;
+    margin-bottom: 36px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+  .btn-primary {
+    background: var(--coral);
+    color: var(--ivory);
+    padding: 14px 28px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-block;
+  }
+  .btn-secondary {
+    border: 1px solid var(--line);
+    color: var(--ivory);
+    padding: 14px 28px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-block;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--marigold);
+  }
+  .stat-label {
+    font-size: 13.5px;
+    color: var(--ivory-dim);
+  }
+
+  /* ---------- PROMISE ---------- */
+  .promise {
+    padding: 88px 0;
+    text-align: center;
+  }
+  .promise .kicker {
+    font-size: 15px;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .promise h2 {
+    font-size: clamp(26px, 3.4vw, 38px);
+    max-width: 780px;
+    margin: 0 auto 20px;
+  }
+  .promise p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: #55556e;
+    font-size: 17px;
+  }
+
+  /* ---------- STAIRCASE / TIERS ---------- */
+  .tiers-section {
+    background: var(--ivory-dim);
+    padding: 100px 0 110px;
+  }
+  .tiers-head {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .tiers-head .kicker {
+    font-size: 15px;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .tiers-head h2 {
+    font-size: clamp(26px, 3.4vw, 36px);
+  }
+
+  .staircase {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 28px;
+    border-top: 1px solid var(--line-dark);
+    padding: 40px 0;
+    align-items: start;
+  }
+  .step:last-child { border-bottom: 1px solid var(--line-dark); }
+
+  .step-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .step-num img { width: 100%; height: 100%; display: block; }
+
+  .step-body {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 760px) {
+    .step-body { grid-template-columns: 1fr; }
+  }
+
+  .step-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .step-title {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .step-tag {
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--indigo);
+    color: var(--ivory);
+  }
+  .step-3 .step-tag { background: var(--coral); }
+  .step-desc {
+    color: #55556e;
+    font-size: 15.5px;
+    margin-bottom: 16px;
+    max-width: 460px;
+  }
+  .step-price {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .step-price .old {
+    font-size: 15px;
+    color: #9a9ab0;
+    text-decoration: line-through;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+  .step-note {
+    font-size: 13px;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .step-link {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--indigo);
+    border-bottom: 2px solid var(--marigold);
+    padding-bottom: 2px;
+    display: inline-block;
+  }
+
+  .feature-list {
+    list-style: none;
+    font-size: 14.5px;
+  }
+  .feature-list li {
+    padding: 7px 0;
+    border-bottom: 1px dashed var(--line-dark);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .feature-list li:last-child { border-bottom: none; }
+  .feature-list .check { color: var(--marigold); font-weight: 700; }
+  .step-3 .feature-list .check { color: var(--coral); }
+  .feature-list .plus {
+    font-size: 12.5px;
+    color: #8b8ba0;
+    font-style: italic;
+  }
+  .term-note {
+    display: block;
+    font-size: 12px;
+    color: #8b8ba0;
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  /* ---------- URGENCY BANNER ---------- */
+  .urgency {
+    background: var(--coral);
+    color: var(--ivory);
+    padding: 56px 0;
+    text-align: center;
+  }
+  .urgency h3 {
+    font-size: clamp(22px, 3vw, 30px);
+    margin-bottom: 12px;
+  }
+  .urgency p {
+    color: rgba(251,246,238,0.9);
+    max-width: 520px;
+    margin: 0 auto 28px;
+    font-size: 16px;
+  }
+  .urgency .btn-primary {
+    background: var(--indigo);
+  }
+  #countdown {
+    display: inline-block;
+    background: rgba(251,246,238,0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials {
+    background: var(--ivory-dim);
+    padding: 90px 0 100px;
+  }
+  .testimonials-head {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .testimonials-head .kicker {
+    font-size: 15px;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .testimonials-head h2 {
+    font-size: clamp(26px, 3.4vw, 36px);
+  }
+  .video-feature {
+    max-width: 760px;
+    margin: 0 auto 56px;
+  }
+  .video-feature video {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 18px 40px rgba(27,58,47,0.18);
+  }
+  .video-caption {
+    text-align: center;
+    font-size: 13.5px;
+    color: #8b8ba0;
+    margin-top: 12px;
+  }
+  .quote-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .quote-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 620px) {
+    .quote-grid { grid-template-columns: 1fr; }
+  }
+  .quote-card {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(27,58,47,0.06);
+  }
+  .quote-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 40px;
+    color: var(--marigold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .quote-text {
+    font-size: 14.5px;
+    color: var(--ink);
+    flex-grow: 1;
+    margin-bottom: 16px;
+  }
+  .quote-author {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--indigo);
+  }
+  .quote-tag {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--coral);
+    text-transform: uppercase;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq {
+    padding: 88px 0 100px;
+  }
+  .faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--line-dark);
+    padding: 20px 0;
+  }
+  .faq-item summary {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 30px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: -2px;
+    font-size: 22px;
+    color: var(--coral);
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .faq-item[open] summary::after { content: "–"; }
+  .faq-item p {
+    margin-top: 12px;
+    color: #55556e;
+    font-size: 15px;
+    max-width: 640px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--indigo-deep);
+    color: var(--ivory-dim);
+    padding: 56px 0 32px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 24px;
+  }
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    color: var(--ivory);
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .footer-brand span { color: var(--marigold); }
+  .footer-tagline { font-size: 14px; max-width: 320px; }
+  .footer-links {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .footer-col h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--marigold);
+    margin-bottom: 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 14px;
+    padding: 4px 0;
+    color: var(--ivory-dim);
+  }
+  .footer-bottom {
+    font-size: 12.5px;
+    color: #6d6d88;
+    text-align: center;
+  }
+
+  @media (max-width: 620px) {
+    .hero { padding: 64px 0 72px; }
+    .promise, .tiers-section { padding: 64px 0; }
+    .step { grid-template-columns: 44px 1fr; gap: 18px; }
+    .nav-ctas { gap: 6px; }
+    .nav-cta, .nav-cta-primary { padding: 8px 12px; font-size: 12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><img src="logo/pen-icon-mark.svg" alt=""> Profitable Educators<span> Nexus</span></div>
+    <div class="nav-ctas">
+      <a href="https://forms.gle/AY1BGNLomEgssYhd6" target="_blank" rel="noopener" class="nav-cta">Join A+ Educators</a>
+      <a href="https://flutterwave.com/pay/profitableeducatorsnexus" target="_blank" rel="noopener" class="nav-cta-primary">Join the Thrivers</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="eyebrow">BUILD, EXCEL &amp; THRIVE WITH TECHNOLOGY</div>
+      <h1>Learn the secret code to make tech work <em>for you.</em></h1>
+      <p class="lede">Not just magic in your classroom.<br><strong style="font-weight:700; color: var(--ivory);">Build confidence, build your brand, and build income with technology.</strong></p>
+      <p style="font-size:14px; color:var(--ivory-dim); opacity:0.8; margin-bottom:28px; margin-top:-24px;">Profitable Educators Nexus is the paid membership program of the A+ Educators community.</p>
+      <p style="font-size:13.5px; color:var(--marigold); margin-bottom:24px;">Already in the A+ Educators WhatsApp group? You are all set — scroll down to see Thrivers.</p>
+      <div class="hero-ctas">
+        <a href="https://forms.gle/AY1BGNLomEgssYhd6" target="_blank" rel="noopener" class="btn-primary">Join A+ Educators — Free</a>
+        <a href="#tiers" class="btn-secondary">See the upgrade paths</a>
+      </div>
+      <p style="font-size:12px; color:var(--ivory-dim); opacity:0.65; margin-top:-32px; margin-bottom:28px;">Opens in a new tab — come back here once you are done.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">1,500+</div>
+          <div class="stat-label">Educators in community</div>
+        </div>
+        <div>
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Countries, 3 continents</div>
+        </div>
+        <div>
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Tech-integration videos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="promise">
+  <div class="wrap">
+    <div class="kicker">THE PROMISE</div>
+    <h2>Three months from now, you will have cracked the code — in your classroom, and beyond it.</h2>
+    <p>Zero to hero with technology.</p>
+    <p>Whichever level you start at, every path leads the same place —</p>
+    <p>An educator who builds, excels, and thrives with tech.</p>
+  </div>
+</section>
+
+<section class="tiers-section" id="tiers">
+  <div class="wrap">
+    <div class="tiers-head">
+      <div class="kicker">YOUR UPGRADE PATH</div>
+      <h2>Start free. <span style="color: var(--coral); font-weight: 700;">Level Up Today.</span></h2>
+    </div>
+
+    <div class="staircase">
+
+      <div class="step step-1">
+        <div class="step-num"><img src="logo/tier-badge-sprout.svg" alt="Sprout icon"></div>
+        <div class="step-body">
+          <div>
+            <div class="step-title-row">
+              <span class="step-title">A+ Educators</span>
+              <span class="step-tag">Free, forever</span>
+            </div>
+            <p class="step-desc">Your foundation. Build confidence and shift from beginner to mastering tech — open to every educator, no cost, ever.</p>
+            <div class="step-price">$0</div>
+            <a href="https://forms.gle/AY1BGNLomEgssYhd6" target="_blank" rel="noopener" class="step-link">Join A+ Educators →</a>
+          </div>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> Monthly webinar</li>
+            <li><span class="check">✓</span> Newsletter</li>
+            <li><span class="check">✓</span> Fire Chat (bi-monthly) <span class="term-note">— informal live discussion sessions</span></li>
+            <li><span class="check">✓</span> 1,500+ educators, 10+ countries</li>
+            <li><span class="check">✓</span> Free resource library</li>
+            <li><span class="check">✓</span> 50+ tech-integration videos</li>
+            <li><span class="check">✓</span> Community hangouts + raffle freebies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step step-2">
+        <div class="step-num"><img src="logo/tier-badge-sapling.svg" alt="Sapling icon"></div>
+        <div class="step-body">
+          <div>
+            <div class="step-title-row">
+              <span class="step-title">Scalers</span>
+            </div>
+            <p class="step-desc">Scale with technology. Make magic in and out of your classroom, with expert-led series and accountability.</p>
+            <div class="step-price">Price TBA</div>
+            <p style="font-size:13px; color:#8b8ba0;">Join A+ Educators to be notified when Scalers opens.</p>
+          </div>
+          <ul class="feature-list">
+            <li><span class="plus">Everything in A+ Educators, plus:</span></li>
+            <li><span class="check">✓</span> Digiteach expert series <span class="term-note">— experts in education share tech secrets for your classroom</span></li>
+            <li><span class="check">✓</span> Tech challenges & certifications <span class="term-note">— hands-on challenges with completion certificates</span></li>
+            <li><span class="check">✓</span> Q&A Coffee Room <span class="term-note">— live, informal Q&A sessions</span></li>
+            <li><span class="check">✓</span> Accountability support <span class="term-note">— peer check-ins to help you follow through</span></li>
+            <li><span class="check">✓</span> Premium videos & VIP sessions</li>
+            <li><span class="check">✓</span> SWAG freebies via raffle <span class="term-note">— branded merchandise giveaways</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step step-3">
+        <div class="step-num"><img src="logo/tier-badge-tree.svg" alt="Flourishing tree icon"></div>
+        <div class="step-body">
+          <div>
+            <div class="step-title-row">
+              <span class="step-title">Thrivers</span>
+              <span class="step-tag">15 founding spots</span>
+            </div>
+            <p class="step-desc">Thrive with technology. Build your brand, make money, and impact the world — with 1-on-1 support.</p>
+            <div class="step-price">$30 <span class="old">$50</span></div>
+            <div class="step-note">Founding price initial investment ends on September 12th</div>
+            <p style="font-size:13px; color:#8b8ba0; margin-bottom:12px;">You will pay a $10 deposit today to secure your spot — the $20 balance is due by September 30th.</p>
+            <a href="https://flutterwave.com/pay/profitableeducatorsnexus" target="_blank" rel="noopener" class="step-link">Claim a founding spot →</a>
+          </div>
+          <ul class="feature-list">
+            <li><span class="plus">Everything in Scalers, plus:</span></li>
+            <li><span class="check">✓</span> LinkedIn Branding Masterclasses</li>
+            <li><span class="check">✓</span> Digital portfolio session / Action Map <span class="term-note">— build your professional portfolio and growth roadmap</span></li>
+            <li><span class="check">✓</span> 1-on-1 monthly strategy session</li>
+            <li><span class="check">✓</span> Brain Power Charge with external coaches <span class="term-note">— mindset & motivation coaching sessions</span></li>
+            <li><span class="check">✓</span> Access to Canva Team</li>
+            <li><span class="check">✓</span> Tech freebies via raffle</li>
+            <li><span class="check">✓</span> CPD partnership discounts <span class="term-note">— discounted continuing professional development courses</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="testimonials-head">
+      <div class="kicker">REAL EDUCATORS, REAL RESULTS</div>
+      <h2>Our Testimonials</h2>
+    </div>
+
+    <div class="video-feature">
+      <video controls preload="none" poster="videos/poster.jpg">
+        <source src="videos/canva-training.mp4" type="video/mp4">
+      </video>
+      <p class="video-caption">Canva for Educators training — a look inside one of our live sessions</p>
+    </div>
+
+    <div class="quote-grid">
+
+      <div class="quote-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">I learned a lot and continue to learn. Primarily through RevUp 1's Canva class, I discovered Canva for Education and designed flyers to welcome students, introduce lessons, and turn ideas into infographics.</p>
+        <div class="quote-author">Byoung Freedom</div>
+        <span class="quote-tag">Rev Up Cohort 1.0 — Canva for Educators</span>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Even me wey be JJC for Canva don dey do small design. Thanks to La Prof — it's worth the investment. Never too late to upgrade.</p>
+        <div class="quote-author">Ammy Gracious</div>
+        <span class="quote-tag">Rev Up Cohort 1.0</span>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Thank you so much for organising this Cohort. I wish it wouldn't end. Maybe we can have another masterclass afterwards!</p>
+        <div class="quote-author">Gloria George</div>
+        <span class="quote-tag">Rev Up Cohort 1.0</span>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Each class is unravelling new packages for educators about tech. I can't believe I didn't know these things. Thank you La Prof for being a Light indeed.</p>
+        <div class="quote-author">Afolashade Imoyera</div>
+        <span class="quote-tag">Rev Up Cohort 1.0</span>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">The Level-Up Program has been a truly rewarding experience. It helped me grow in confidence, creativity, and purpose — a great space to connect, learn, and level up.</p>
+        <div class="quote-author">Nkiruka Ojutalayo</div>
+        <span class="quote-tag">Level Up Coaching Program</span>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Before joining Level Up, I felt stuck and overwhelmed. The program shifted my mindset — I learned to break problems into manageable steps and lead with greater compassion. It's not just helpful, it's a game-changer.</p>
+        <div class="quote-author">Kehinde Imani</div>
+        <span class="quote-tag">Level Up Coaching Program</span>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">I am getting value and I am learning a lot of new things.</p>
+        <div class="quote-author">Olusola Sokunbi</div>
+        <span class="quote-tag">Rev Up Cohort 1.0</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="urgency" id="join">
+  <div class="wrap">
+    <h3>15 Founding Thriver spots. Deadline: September 12th. <span id="countdown"></span></h3>
+    <p>Save your spot with a $10 initial investment. Balance of $20 due September 30th. After that, Thrivers opens to everyone at $50.</p>
+    <div class="hero-ctas" style="justify-content:center;">
+      <a href="https://flutterwave.com/pay/profitableeducatorsnexus" target="_blank" rel="noopener" class="btn-primary">Click to Join THRIVERS</a>
+      <a href="https://forms.gle/AY1BGNLomEgssYhd6" target="_blank" rel="noopener" class="btn-secondary" style="border-color: rgba(251,246,238,0.5);">Click to Join A+ Educators</a>
+    </div>
+    <p style="font-size:12px; color:rgba(251,246,238,0.65); margin-top:14px; margin-bottom:0;">Both open in a new tab — come back here once you are done.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="tiers-head">
+      <div class="kicker">GOT QUESTIONS?</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>What is the difference between A+ Educators, Scalers, and Thrivers?</summary>
+        <p>A+ Educators is our free, permanent community — webinars, newsletter, resource library, and more. Scalers and Thrivers are paid upgrade tiers within Profitable Educators Nexus, adding expert-led training, accountability, and (for Thrivers) 1-on-1 support and brand-building resources.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I join A+ Educators for free?</summary>
+        <p>Click any "Join A+ Educators" button on this page — it takes you to a short Google Form. Once submitted, you will be added to the community directly.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens after I pay for Thrivers?</summary>
+        <p>After your $10 deposit, you will receive confirmation and next steps by email. Once your $20 balance is paid by September 30th, you are fully onboarded with your welcome pack and first session details.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is $30 a one-time payment?</summary>
+        <p>No — Thrivers membership runs in 3-month cycles. $30 is the founding-member rate for your first quarter if you join by September 12th. After that, the regular rate of $50 per quarter applies going forward.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens when my 3 months are up?</summary>
+        <p>You will get a renewal reminder before your membership expires. If you do not renew right away, you are simply moved back to free A+ Educators access — no penalty, and you can rejoin Thrivers anytime.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Profitable Educators<span> Nexus</span></div>
+        <p class="footer-tagline">A program of A+ Educators — build, excel, and thrive with technology.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="#tiers">A+ Educators — Free</a>
+          <a href="#tiers">Scalers</a>
+          <a href="#tiers">Thrivers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="#faq">Frequently Asked Questions</a>
+          <a href="mailto:profitableeducatorsnexus@gmail.com">Contact us: profitableeducatorsnexus@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Profitable Educators Nexus, a program of A+ Educators. Operated by Sparkles Educonsult. Built for educators, by educators.</div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    var deadline = new Date('2026-09-12T23:59:59');
+    var el = document.getElementById('countdown');
+    if (!el) return;
+    var now = new Date();
+    var diffMs = deadline - now;
+    var days = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+    if (diffMs <= 0) {
+      el.textContent = 'Deadline passed';
+    } else if (days === 1) {
+      el.textContent = 'Last day!';
+    } else {
+      el.textContent = days + ' days left';
+    }
+  })();
+</script>
+
+</body>
+</html>

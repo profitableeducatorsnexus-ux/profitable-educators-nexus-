@@ -113,6 +113,9 @@
   .brand-name { font-size: .75rem; }
   header .btn { min-height: 2.75rem; padding-inline: .75rem; font-size: .75rem; }
   .founding-float { right: .75rem; bottom: .75rem; }
-  .timer-art { width: 4.5rem; height: 4.5rem; }
-  .founding-count-wrap { min-width: 7rem; }
+  .timer-art { width: 3.75rem; height: 3.75rem; }
+  .founding-count-wrap { min-width: 6.5rem; padding: .4rem .65rem; }
+  .founding-label { font-size: 9px; }
+  .founding-count { font-size: .875rem; }
+  .founding-hint { font-size: 10px; }
 }

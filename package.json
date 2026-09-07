@@ -14,5 +14,8 @@
     "gsap": "latest",
     "tailwindcss": "latest",
     "typescript": "latest"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
   }
 }

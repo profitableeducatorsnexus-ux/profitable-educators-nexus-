@@ -91,7 +91,28 @@
   .brand-star { display: none; }
 }
 
-@media (max-width: 560px) {
+@media (hover: none), (pointer: coarse) {
+  .brand-lockup:hover::before { opacity: 0; transform: scale(.55); }
+  .brand-lockup:hover::after { opacity: 0; animation: none; }
+  .brand-lockup:hover .brand-logo { animation: none; transform: none; filter: none; }
+  .founding-timer:hover .timer-art { transform: none; }
+  .nav-link:hover::after { transform: scaleX(0); }
+  .btn:hover { transform: none; }
+}
+
+@media (max-width: 767px) {
+  .screen-section { min-height: auto; padding-block: 2rem; }
+  .hero-stage { min-height: calc(100svh - 4.5rem); }
+  .hero-stage > div.relative { min-height: calc(100svh - 4.5rem); padding-block: 4rem; }
+  .hero-copy { width: 100%; border-radius: 1.5rem; padding: 1.5rem 1rem; }
+  .hero-copy .text-lg { font-size: 1rem; line-height: 1.45; }
+  .section-glass { border-radius: 1.5rem; padding: 1rem; }
+  .screen-section h2 { font-size: clamp(2rem, 9vw, 2.75rem); }
+  .pastel-nexus .section-glass, .pastel-next .section-glass { padding-block: 1.5rem; }
+  .glass-panel { min-height: 0 !important; }
+  .brand-name { font-size: .75rem; }
+  header .btn { min-height: 2.75rem; padding-inline: .75rem; font-size: .75rem; }
   .founding-float { right: .75rem; bottom: .75rem; }
+  .timer-art { width: 4.5rem; height: 4.5rem; }
   .founding-count-wrap { min-width: 7rem; }
 }

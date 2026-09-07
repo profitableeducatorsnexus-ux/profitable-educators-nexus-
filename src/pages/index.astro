@@ -25,13 +25,16 @@ const faqs = [
 ---
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" as="image" href="/assets/media/slides/slide_1.webp" fetchpriority="high" />
   <link rel="icon" type="image/png" href="/assets/brand/logo.png" />
   <meta name="theme-color" content="#b9e4fa" />
 </head>
 
 <header class="sticky top-0 z-30 border-b border-transparent bg-parchment/85 backdrop-blur-xl">
   <nav class="mx-auto flex min-h-18 w-[min(calc(100%-2rem),1200px)] items-center justify-between gap-6" aria-label="Main navigation">
-    <a class="brand-lockup flex shrink-0 items-center gap-2.5 font-sans text-[15px] font-semibold leading-none tracking-[-.025em] sm:text-lg" id="brand-home" href="/"><img class="brand-logo size-10 object-contain sm:size-11" src="/assets/brand/logo.png" alt="" /><span class="whitespace-nowrap">Profitable Educators <span class="text-violet">Nexus</span></span><span id="brand-burst" aria-hidden="true"></span></a>
+    <a class="brand-lockup flex shrink-0 items-center gap-2.5 font-sans text-[15px] font-semibold leading-none tracking-[-.025em] sm:text-lg" id="brand-home" href="/"><img class="brand-logo size-10 object-contain sm:size-11" src="/assets/brand/logo.png" alt="" /><span class="brand-name whitespace-nowrap">Profitable Educators <span class="text-violet">Nexus</span></span><span id="brand-burst" aria-hidden="true"></span></a>
     <div class="hidden items-center gap-8 text-sm font-medium tracking-[-.01em] text-stone md:flex"><a class="nav-link" href="#tiers">Programs</a><a class="nav-link" href="#stories">Educator stories</a><a class="nav-link" href="#faq">FAQs</a></div>
     <div class="flex items-center gap-3"><a class="hidden text-sm font-medium sm:block" href="mailto:profitableeducatorsnexus@gmail.com">Contact us</a><a class="btn btn-lilac" href="https://flutterwave.com/pay/profitableeducatorsnexus" target="_blank" rel="noopener">Join Thrivers ↗</a></div>
   </nav>
@@ -58,11 +61,11 @@ const faqs = [
 <main>
   <section class="hero-stage screen-section relative isolate min-h-[680px] overflow-hidden text-ink">
     <div class="hero-slideshow" aria-hidden="true">
-      {slides.map((slide, index) => <img class:list={["hero-slide", { 'is-active': index === 0 }]} src={`/assets/media/slides/${slide}`} alt="" loading={index === 0 ? 'eager' : 'lazy'} />)}
+      {slides.map((slide, index) => <img class:list={["hero-slide", { 'is-active': index === 0 }]} src={`/assets/media/slides/${slide}`} alt="" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />)}
     </div>
     <div class="hero-wash" aria-hidden="true"></div>
     <div class="relative z-10 mx-auto flex min-h-[680px] w-[min(calc(100%-2rem),1200px)] items-center justify-center py-20 text-center">
-      <div class="hero-copy reveal mx-auto max-w-3xl"><p class="hero-eyebrow eyebrow">Build, excel &amp; thrive with technology</p><h1 class="display mx-auto mt-6 max-w-3xl text-[3rem] sm:text-7xl lg:text-[5.75rem]">Make technology work for your classroom, career, and next chapter.</h1><p class="mx-auto mt-7 max-w-xl text-lg text-ink/75">Profitable Educators Nexus helps educators <strong class="font-medium text-ink">build confidence, grow their professional brand, and create new income opportunities</strong> with technology.</p><div class="mt-8 flex flex-wrap justify-center gap-3"><a class="btn btn-wine" href="https://forms.gle/AY1BGNLomEgssYhd6" target="_blank" rel="noopener">Join A+ Educators — free ↗</a><a class="btn btn-outline-dark" href="#tiers">Explore the pathways ↓</a></div></div>
+      <div class="hero-copy reveal mx-auto max-w-3xl"><p class="hero-eyebrow eyebrow">Build, excel &amp; thrive with technology</p><h1 class="display mx-auto mt-6 max-w-3xl text-[clamp(2.35rem,10vw,3rem)] sm:text-7xl lg:text-[5.75rem]">Make technology work for your classroom, career, and next chapter.</h1><p class="mx-auto mt-7 max-w-xl text-lg text-ink/75">Profitable Educators Nexus helps educators <strong class="font-medium text-ink">build confidence, grow their professional brand, and create new income opportunities</strong> with technology.</p><div class="mt-8 flex flex-wrap justify-center gap-3"><a class="btn btn-wine" href="https://forms.gle/AY1BGNLomEgssYhd6" target="_blank" rel="noopener">Join A+ Educators — free ↗</a><a class="btn btn-outline-dark" href="#tiers">Explore the pathways ↓</a></div></div>
     </div>
     <aside class="glass-card absolute bottom-8 right-4 z-10 hidden w-60 rotate-3 md:block lg:right-[8%]"><small class="font-bold uppercase tracking-wider text-violet">Community highlight</small><p class="mt-2 text-sm leading-snug">More than 1,500 educators are building their next chapter with technology.</p></aside>
   </section>

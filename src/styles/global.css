@@ -75,12 +75,14 @@
 @layer utilities {
   .hero-grid { background: radial-gradient(ellipse at 18% 18%, rgb(255 255 255 / .82) 0 9%, transparent 25%), radial-gradient(ellipse at 84% 22%, rgb(255 255 255 / .56) 0 10%, transparent 28%), radial-gradient(circle at 78% 78%, rgb(232 180 79 / .22), transparent 24%), linear-gradient(135deg, #dff4ff 0%, #b9e4fa 48%, #8ecae9 100%); }
   .hero-stage { background: #b9e4fa; }
+  .hero-copy { @apply rounded-[2rem] border border-white/60 bg-white/25 px-5 py-8 backdrop-blur-md sm:px-12 sm:py-10; box-shadow: inset 0 1px 0 rgb(255 255 255 / .7), 0 18px 50px rgb(23 50 77 / .08); }
+  .hero-copy .display { font-weight: 700; text-shadow: 0 2px 12px rgb(255 255 255 / .48); }
+  .hero-eyebrow { color: #087fae; text-shadow: 0 1px 8px rgb(255 255 255 / .9); }
   .pastel-pathway { background: radial-gradient(circle at 14% 18%, rgb(255 255 255 / .72), transparent 27%), radial-gradient(circle at 86% 82%, rgb(255 214 190 / .78), transparent 32%), linear-gradient(135deg, #fff0e8 0%, #ffe8d6 48%, #ffe1c9 100%); }
   .pastel-stories { background: radial-gradient(circle at 84% 14%, rgb(255 255 255 / .78), transparent 26%), radial-gradient(circle at 15% 84%, rgb(249 205 224 / .68), transparent 31%), linear-gradient(135deg, #f4edff 0%, #eee5ff 52%, #f9e6ef 100%); }
   .pastel-nexus { background: radial-gradient(circle at 12% 22%, rgb(255 255 255 / .74), transparent 28%), radial-gradient(circle at 87% 78%, rgb(217 240 225 / .76), transparent 34%), linear-gradient(135deg, #e9f8ef 0%, #e3f3ed 48%, #e8e4fb 100%); }
   .pastel-next { background: radial-gradient(circle at 84% 18%, rgb(255 255 255 / .8), transparent 26%), radial-gradient(circle at 16% 82%, rgb(255 220 204 / .78), transparent 31%), linear-gradient(135deg, #fff0ed 0%, #ffe8df 48%, #edf8ef 100%); }
   .reveal { opacity: 0; transform: translateY(24px); }
-  .reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .7s ease, transform .7s ease; }
 }
 
 @media (prefers-reduced-motion: reduce) {

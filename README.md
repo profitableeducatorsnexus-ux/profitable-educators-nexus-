@@ -25,5 +25,5 @@ The project uses Astro, Tailwind CSS v4, and GSAP/ScrollTrigger. Netlify publish
 - `src/pages/` — Astro routes for the homepage and payment confirmation page.
 - `src/styles/` — Tailwind v4 theme and global component utilities.
 - `public/assets/brand/` — active logo, timer, and tier icon assets.
-- `public/assets/media/` — video poster and training video.
+- `public/assets/media/` — video poster, training video, and optimized hero slideshow images.
 - `dist/` — generated only during builds and intentionally ignored.
